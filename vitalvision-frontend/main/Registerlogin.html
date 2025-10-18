@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register & Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #8ad08f, #1d660b);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+        }
+        .form-container {
+            background: rgba(47, 46, 46, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        input {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            color: white;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        button {
+            background: #897ccc;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+        button:hover {
+            background: #251fd1;
+        }
+        .toggle-text {
+            margin-top: 10px;
+            color: rgba(242, 247, 244, 0.934);
+        }
+        .toggle-text button {
+            background: none;
+            border: none;
+            color: #2729b5;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 id="formTitle" class="text-2xl font-bold mb-4 text-white">Register</h2>
+        <form id="authForm" action="/register" method="POST">
+            <div id="nameField" class="mb-4">
+                <input type="text" name="name" id="name" placeholder="Full Name" required>
+            </div>
+            <div class="mb-4">
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div id="phoneField" class="mb-4">
+                <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+            </div>
+            <div class="mb-4">
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit"> <a href="{{ url_for('index') }}"class="cta-link">
+Submit</button>
+        </form>
+        <p class="toggle-text">
+            <span id="toggleText">Already have an account?</span>
+            <button id="toggleButton">Login</button>
+        </p>
+    </div>
+
+    <script>
+        const formTitle = document.getElementById("formTitle");
+        const toggleText = document.getElementById("toggleText");
+        const toggleButton = document.getElementById("toggleButton");
+        const nameField = document.getElementById("nameField");
+        const phoneField = document.getElementById("phoneField");
+        const authForm = document.getElementById("authForm");
+
+        let isLoginMode = false;
+
+        toggleButton.addEventListener("click", () => {
+            isLoginMode = !isLoginMode;
+            authForm.action = isLoginMode ? "/login" : "/register";
+            authForm.method = "POST"; 
+            formTitle.innerText = isLoginMode ? "Login" : "Register";
+            toggleText.innerText = isLoginMode ? "Don't have an account?" : "Already have an account?";
+            toggleButton.innerText = isLoginMode ? "Register" : "Login";
+            nameField.style.display = isLoginMode ? "none" : "block";
+            phoneField.style.display = isLoginMode ? "none" : "block";
+        });
+
+        // Show popup alerts from Flask
+        const message = "{{ message }}";
+        if (message) {
+            alert(message);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctors List</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/vv.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Meet the Doctors at {{ hospital }}</h1>
+  </header>
+  <main class="doctor-list">
+    <a href="{{ url_for('doctor_profile', doctor='Dr. Krishnan Kumar') }}" class="doctor-card">
+      <h3>Dr. Krishnan Kumar</h3>
+      <p>Speciality: Cardiologist</p>
+      <p>Experience: 15 years</p>
+    </a>
+
+    <a href="{{ url_for('doctor_profile', doctor='Dr. Shalini K.') }}" class="doctor-card">
+      <h3>Dr. Shalini K.</h3>
+      <p>Speciality: Neurologist</p>
+      <p>Experience: 10 years</p>
+    </a>
+    
+    <a href="{{ url_for('doctor_profile', doctor='Dr. Aatmaram') }}" class="doctor-card">
+      <h3>Dr. Aatmaram</h3>
+      <p>Speciality: Pediatrician</p>
+      <p>Experience: 8 years</p>
+    </a>
+    
+    <a href="{{ url_for('doctor_profile', doctor='Dr. Govinda') }}" class="doctor-card">
+      <h3>Dr. Govinda</h3>
+      <p>Speciality: Dentist</p>
+      <p>Experience: PG Student</p>
+    </a>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 VitalVision. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

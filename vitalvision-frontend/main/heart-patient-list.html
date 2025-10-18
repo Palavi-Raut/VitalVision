@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Records</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Background color for the entire webpage */
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+    </style>
+</head>
+<body class="p-6">
+
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-4 text-gray-700">Patient Records</h2>
+        
+        <!-- Search Input -->
+        <input type="text" id="searchInput" placeholder="Search by name..." class="mb-4 p-2 border rounded w-full">
+
+        <!-- Patient Table -->
+        <table class="w-full border-collapse border border-gray-300">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border border-gray-300 px-4 py-2">Patient Name</th>
+                    <th class="border border-gray-300 px-4 py-2">Age</th>
+                    <th class="border border-gray-300 px-4 py-2">Last Visit</th>
+                    <th class="border border-gray-300 px-4 py-2">Action</th>
+                </tr>
+            </thead>
+            <tbody id="patientTableBody">
+                <!-- Data will be populated here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Sample patient data (replace with API fetch later)
+        const patients = [
+            { id: 1, name: "Varun Sharma", age: 45, lastVisit: "Feb 28, 2025" },
+            { id: 2, name: "Alibaba Rao", age: 38, lastVisit: "Feb 27, 2025" },
+            { id: 3, name: "gourav Adarsh", age: 50, lastVisit: "Feb 20, 2025" },
+            { id: 4, name: "Bob Patel ", age: 30, lastVisit: "Feb 10, 2025" }
+        ];
+
+        // Function to display patient data
+        function displayPatients(data) {
+            const tableBody = document.getElementById("patientTableBody");
+            tableBody.innerHTML = "" 
+
+            data.forEach(patient => {
+                const row = `
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2">${patient.name}</td>
+                        <td class="border border-gray-300 px-4 py-2">${patient.age}</td>
+                        <td class="border border-gray-300 px-4 py-2">${patient.lastVisit}</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button onclick="viewDetails(${patient.id})" class="bg-blue-600 text-white px-3 py-1 rounded">
+                                View Details
+                            </button>
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        // Function to filter patients by name
+        document.getElementById("searchInput").addEventListener("input", function() {
+            const searchText = this.value.toLowerCase();
+            const filteredPatients = patients.filter(patient => 
+                patient.name.toLowerCase().includes(searchText)
+            );
+            displayPatients(filteredPatients);
+        });
+
+        // Function to handle View Details button
+        function viewDetails(patientId) {
+            window.location.href = `patient-details.html?id=${patientId}`;
+        }
+
+        // Load initial data
+        displayPatients(patients);
+    </script>
+
+</body>
+</html>

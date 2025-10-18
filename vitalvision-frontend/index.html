@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="file:///C:/Users/dell/VitalVision/Registerlogin.html">
+<img src="{{ url_for('static', filename='images/vv_OG_logo.png') }}" alt="Profile Picture" class="profile-image" height=250 width=250>
+
+    <title>Select Prediction Model</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #a6c1ee, #c9daf8);
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Prediction Model</h1>
+        <div class="btn-container">
+            <a href="{{ url_for('diabetes_page') }}" class="btn">Diabetes Prediction</a>
+            <a href="{{ url_for('heart_page') }}" class="btn">Heart Disease Prediction</a>
+        </div>
+    </div>
+</body>
+</html>
+

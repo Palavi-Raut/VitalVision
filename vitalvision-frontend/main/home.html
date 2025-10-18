@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Template</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/vv.css') }}">
+  <script src="script.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+<!-- ✅ Display User's Name if Logged In -->
+{% if user_name %}
+  <div class="welcome-message">
+    <h2>Welcome, {{ user_name }}! 🎉</h2>
+  </div>
+{% endif %}
+
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <img src="{{ url_for('static', filename='images/vv_OG_logo.png') }}" alt="Profile Picture" class="profile-image" height="250" width="250">
+      <h1>Welcome to VitalVision</h1>
+      <p><span id="typing"></span><span id="cursor">Your Health , Our Care|</span></p> 
+      <a href="#services" class="cta-link">
+        <button class="cta-button">Get Started</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Patient History</h3>
+          <p>Get patient details in just a few clicks!</p>
+          <a href="{{ url_for('patient_index') }}" class="cta-link">
+            <button class="cta-button">Learn More</button>
+          </a>
+        </div>
+        <div class="card">
+          <h3>Diagnostics</h3>
+          <p>Advanced tools for accurate results.</p>
+          <a href="{{ url_for('Registerlogin') }}"class="cta-link">
+            <button class="cta-button" >Learn More</button>
+          </a>
+        </div>
+        <div class="card">
+          <h3>Book an Appointment</h3>
+             <p>Connect with the best doctors near you.</p>
+          <a href="{{ url_for('hospital') }}" class="cta-link">
+            <button class="cta-button">Book Now</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unified Testimonials & Contact Us Section -->
+<section class="testimonial-contact">
+  <div class="container">
+    
+    <!-- Testimonials -->
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <p>"Excellent service and friendly staff!"</p>
+        <span>- xyz</span>
+      </div>
+      <div class="testimonial">
+        <p>"They truly care about their patients."</p>
+        <span>- abc</span>
+      </div>
+    </div>
+
+
+<!--notification--!>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+    <!-- Contact Us -->
+    <div class="contact">
+      <h2>Contact Us</h2>
+      <form action="/contact" method="post">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+</form>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 . VitalVision. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
