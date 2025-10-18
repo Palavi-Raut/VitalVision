@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Profile</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/vv.css') }}">
+</head>
+<body>
+  <header>
+    <h1>{{ doctor_name }}</h1> <!-- Displays Doctor's Name on Top -->
+  </header>
+  <main class="profile">
+    <p><strong>Speciality:</strong> {{ doctor.speciality }}</p>
+    <p><strong>Experience:</strong> {{ doctor.experience }}</p>
+    <p><strong>Degrees:</strong> {{ doctor.degrees }}</p>
+    <p><strong>About:</strong> {{ doctor.about }}</p>
+
+    <!-- Doctor Image -->
+    <img src="{{ url_for('static', filename='images/license.jpeg') }}" alt="{{ doctor_name }}" class="licenseimg">
+
+    <!-- Appointment Button -->
+   <a href="{{ url_for('book_appointment_page', doctor_name=doctor_name) }}" class="appointment-btn">Book Appointment</a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 VitalVision. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+

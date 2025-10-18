@@ -1,0 +1,422 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(to right, #8ad08f, #1d660b);
+  color: rgb(7, 5, 5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.cta-button {
+  background: whitesmoke(9, 8, 8);
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.cta-button:hover {
+  background: #3d5bd2;
+}
+
+/* Services Section */
+.services {
+  background: white;
+  padding: 50px 20px;
+}
+.services h2 {
+  margin-bottom: 30px;
+}
+.service-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+.card {
+  background: #52a151;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.26);
+  text-align: center;
+  flex: 1;
+}
+
+/* Unified Testimonial & Contact Section */
+.testimonial-contact {
+padding: 50px 20px;
+background: linear-gradient(to bottom,  #8ad08f, #1d660b);
+color: rgb(4, 3, 3);
+}
+
+/* Testimonials Styling */
+.testimonial-slider {
+display: flex;
+gap: 20px;
+justify-content: center;
+}
+
+.testimonial {
+text-align: center;
+max-width: 300px;
+padding: 20px;
+background: #03530a;
+color: whitesmoke;
+border-radius: 10px;
+}
+
+/* Contact Form */
+.contact {
+margin-top: 40px;
+}
+
+.contact form {
+display: flex;
+flex-direction: column;
+gap: 10px;
+max-width: 500px;
+margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #901616;
+border-radius: 5px;
+}
+
+/* Button styling specific to Contact Us */
+.contact-btn {
+background: #03530a;
+color: white;
+cursor: pointer;
+padding: 9px;
+width: 50%;  /* Set button width to 50% */
+display: block; /* Make it a block element for centering */
+margin: 0 auto; /* Center the button horizontally */
+text-align: center; /* Ensure text stays centered */
+border: none; /* Remove any default borders */
+border-radius: 5px; /* Optional: Add rounded corners */
+font-size: 16px; /* Adjust font size if needed */
+}
+
+.contact-btn:hover {
+background: #03530a;
+}
+
+
+
+/* Footer */
+footer {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}  
+
+/* Hospital List */
+.hospital-list {
+display: flex;
+flex-direction: column;
+gap: 20px;
+padding: 20px;
+}
+.hospital {
+background: #249546;
+padding: 20px;
+border: 1px solid #9c5454;
+border-radius: 10px;
+text-decoration: none;
+color: #2dd42d;
+font-size: 1.2rem;
+font-weight: bold;
+}
+.hospital:hover {
+background: #e5e7eb;
+}
+
+/* Doctor List */
+.doctor-list {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+padding: 20px;
+}
+.doctor-card {
+background: #f3f4f6;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 10px;
+text-decoration: none;
+color: #111;
+width: calc(33% - 20px);
+}
+.doctor-card:hover {
+background: #e5e7eb;
+}
+
+/* Doctor Profile */
+.profile {
+padding: 20px;
+font-size: 1.2rem;
+}
+.profile button {
+margin-top: 20px;
+background: #c6251d;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+}
+.profile button:hover {
+background: #c6251d;
+}
+
+/* General Styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Inter', sans-serif;
+line-height: 1.6;
+background-color: #f9fafb;
+color: black;
+}
+
+/* Header Styles */
+header {
+background-color: #c6251d;
+color: white;
+text-align: center;
+padding: 20px 0;
+}
+header h1 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+
+/* Hospital List Styles */
+.hospital-list {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+padding: 40px 20px;
+}
+.hospital {
+text-decoration: none;
+color: whitesmoke;
+background-color: #399145;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 10px;
+width: 90%;
+max-width: 600px;
+text-align: center;
+font-size: 1.2rem;
+font-weight: bold;
+transition: background-color 0.3s, transform 0.3s;
+}
+.hospital:hover {
+background-color: #399145;
+transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+.hospital {
+  width: 100%; /* Ensure vertical alignment even on larger screens */
+}
+}
+
+/* Doctor List Styles */
+.doctor-list {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+padding: 40px 20px;
+}
+.doctor-card {
+text-decoration: none;
+color: whitesmoke;
+background-color: #3da844;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 10px;
+width: 90%;
+max-width: 600px;
+text-align: center;
+font-size: 1rem;
+transition: background-color 0.3s, transform 0.3s;
+}
+.doctor-card:hover {
+background-color:  #3da844;
+transform: scale(1.03);
+}
+
+/* Responsive Design for Doctor List */
+@media (min-width: 768px) {
+.doctor-card {
+  width: 100%; /* Keep vertical layout on larger screens */
+}
+}
+/* General Styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Inter', sans-serif;
+line-height: 1.6;
+background-color: #14590f;
+color: black;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+
+/* Header Styles */
+header {
+background-color: #3da844;
+color: white;
+text-align: center;
+padding: 20px 0;
+}
+header h1 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+
+/* Auth Container */
+.auth-container {
+display: flex;
+justify-content: center;
+padding: 40px 20px;
+flex-grow: 1;
+}
+
+/* Auth Section */
+.auth-section {
+background-color: white;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+width: 100%;
+max-width: 400px;
+}
+
+/* Auth Form */
+.auth-form {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.auth-form input {
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+.auth-button {
+background-color: #4bc64e;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+transition: background-color 0.3s;
+}
+
+.auth-button:hover {
+background-color: #67abe6;
+}
+
+/* Sign Up / Login Prompt */
+.login-prompt, .signup-prompt {
+text-align: center;
+margin-top: 20px;
+}
+
+.login-prompt a, .signup-prompt a {
+color: #5799d3;
+text-decoration: none;
+}
+
+.login-prompt a:hover, .signup-prompt a:hover {
+text-decoration: underline;
+}
+
+/* Footer */
+footer {
+background: black;
+color: white;
+text-align: center;
+padding: 20px 0;
+margin-top: auto;
+}
+
+.overall {
+background-color: #040505;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+#cursor {
+font-size: 24px;
+font-weight: bold;
+color: black;
+animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+50% { opacity: 0; }
+}
+
+.licenseimg {
+position: fixed;
+top: 145px;
+right: 32px;
+width: 212px;
+height: 151px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
