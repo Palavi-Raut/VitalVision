@@ -2,6 +2,7 @@
 🩺 Vital Vision — Smart Disease Prediction & Healthcare System
 
 🧠Overview
+
 Vital Vision is an AI-powered web application that helps users predict the likelihood of two major health conditions — Diabetes and Heart Disease based on medical input data.
 It aims to make early diagnosis insights more accessible while also allowing users to find doctors, book appointments, and contact healthcare providers.
 
